@@ -1,21 +1,60 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>{{ folder }}</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ folder }}</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">{{ folder }}</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">{{ folder }}</strong>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <div id="container">
+        <ion-card>
+            <ion-card-header>
+                <ion-card-title>
+                    Avisos
+                </ion-card-title>
+                <ion-card-subtitle>
+                    ¡No te lo puedes perder!
+                </ion-card-subtitle>
+            </ion-card-header>
+            <ion-slides pager="true" [options]="slideOpt">
+                <ion-slide *ngFor="let item of slides">
+                    <ion-img [src]='item'></ion-img>
+                </ion-slide>
+            </ion-slides>
+        </ion-card>
+        <div id="icons">
+            <ion-card class="homeworkIcon">
+                <ion-card-header>
+                    <ion-card-header>
+                        <ion-card-subtitle>
+                            Tareas
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-img src="https://image.flaticon.com/icons/png/512/2702/2702069.png"></ion-img>
+                    </ion-card-content>
+                </ion-card-header>
+            </ion-card>
+            <ion-card class="homeworkIcon">
+                <ion-card-header>
+                    <ion-card-header>
+                        <ion-card-subtitle>
+                            Notas
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <ion-img src="https://image.flaticon.com/icons/png/512/752/752326.png"></ion-img>
+                    </ion-card-content>
+                </ion-card-header>
+            </ion-card>
+        </div>
+    </div>
 </ion-content>
