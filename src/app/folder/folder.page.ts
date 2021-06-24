@@ -21,11 +21,9 @@ export class FolderPage implements OnInit {
   }
 
   ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    //this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+    this.folder = "Estudiante";
   }
 
 }
 
-interface user{
-    usuario: string; 
-}

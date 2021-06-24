@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: FolderPage
+  },
+  {
+    path: 'homework',
+    loadChildren: () => import('./folder/homework/homework.module').then( m => m.HomeworkPageModule)
+  },
+  {
+    path: 'homework',
+    loadChildren: () => import('./homework/homework.module').then( m => m.HomeworkPageModule)
   }
 ];
 

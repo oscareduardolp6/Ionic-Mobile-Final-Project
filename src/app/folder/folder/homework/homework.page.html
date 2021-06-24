@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/folder"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Tareas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-reorder-group disabled="false">
+        <ion-item *ngFor="let hw of homeworks">
+            <ion-checkbox color="primary" class="chbHomeworks" [(ngModel)]="hw.isChecked"></ion-checkbox>
+            <ion-label>
+                {{hw.text}}
+            </ion-label>
+            <ion-reorder slot="end" ></ion-reorder>
+        </ion-item>
+    </ion-reorder-group>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="danger" (click)="addTarea()">
+            <ion-icon name="add" ></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
