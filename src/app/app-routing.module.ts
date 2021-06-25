@@ -23,6 +23,10 @@ const routes: Routes = [
             loadChildren: () => import('./folder/folder/homework/homework-detail/homework-detail.module').then( m => m.HomeworkDetailPageModule)
         }
     ]
+  },
+  {
+    path: 'notoes',
+    loadChildren: () => import('./notoes/notoes.module').then( m => m.NotoesPageModule)
   }
 ];
 

@@ -1,9 +1,36 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>homework-detail</ion-title>
+  <ion-toolbar color="primary">
+    <ion-title>Agregar Tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-card class="input-detail">
+        <ion-input placeholder="Titulo Tarea"></ion-input>
+    </ion-card>
+    <ion-card>
+        <ion-select placeholder="Materia" class="input-detail">
+            <ion-select-option style="font-size: larger;">Desarrollo de aplicaciones para dispositivos moviles</ion-select-option>
+            <ion-select-option>Redes de computadoras</ion-select-option>
+            <ion-select-option>Taller de sistemas operatvos</ion-select-option>
+            <ion-select-option>Arquitectura de computadoras</ion-select-option>
+            <ion-select-option>Inteligencia Artificial</ion-select-option>
+            <ion-select-option>Ciencia de datos</ion-select-option>
+        </ion-select>
+    </ion-card>
+    <ion-card>
+        <ion-select placeholder="Grupo" class="input-detail">
+            <ion-select-option style="font-size: larger;">Desarrollo de aplicaciones para dispositivos moviles</ion-select-option>
+            <ion-select-option>Redes de computadoras</ion-select-option>
+            <ion-select-option>Taller de sistemas operatvos</ion-select-option>
+            <ion-select-option>Arquitectura de computadoras</ion-select-option>
+            <ion-select-option>Inteligencia Artificial</ion-select-option>
+            <ion-select-option>Ciencia de datos</ion-select-option>
+        </ion-select>
+    </ion-card>
+    <ion-card>
+        <ion-textarea placeholder="Detalles de la tarea" id="homeworkComment"></ion-textarea>
+    </ion-card>
+    <ion-button expand="block" class="input-detail" id="post-button" >Publicar Tarea</ion-button>
+    
 </ion-content>
