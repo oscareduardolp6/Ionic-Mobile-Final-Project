@@ -27,6 +27,10 @@ const routes: Routes = [
   {
     path: 'notoes',
     loadChildren: () => import('./notoes/notoes.module').then( m => m.NotoesPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 

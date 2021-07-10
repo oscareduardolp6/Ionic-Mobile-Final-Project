@@ -1,0 +1,19 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+ -->
+<ion-content>
+    <div id="login-wrapper">
+        <ion-img *ngIf="darkMode" src="../assets/user.svg" class="loginImg"></ion-img>
+        <!-- <ion-img *ngIf="!darkMode" src="../assets/user (1).svg" class="loginImg"></ion-img>  -->
+        <ion-card class="loginInput">
+            <ion-input placeholder="Usuario" inputmode="email" required="true" type="email" id="userInput"></ion-input>
+        </ion-card>
+        <ion-card class="loginInput">
+            <ion-input placeholder="Contraseña" inputmode="password" required="true" type="email" id="passwordInput"></ion-input>
+        </ion-card>
+        <ion-button expand="block" id="loginButton">Iniciar sesión</ion-button>
+    </div>
+</ion-content>
