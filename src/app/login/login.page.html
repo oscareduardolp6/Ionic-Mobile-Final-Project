@@ -9,11 +9,14 @@
         <ion-img *ngIf="darkMode" src="../assets/user.svg" class="loginImg"></ion-img>
         <!-- <ion-img *ngIf="!darkMode" src="../assets/user (1).svg" class="loginImg"></ion-img>  -->
         <ion-card class="loginInput">
-            <ion-input placeholder="Usuario" inputmode="email" required="true" type="email" id="userInput"></ion-input>
+            <ion-input placeholder="Usuario" required="true" type="email" id="userInput" [(ngModel)]="user.user"></ion-input>
         </ion-card>
         <ion-card class="loginInput">
-            <ion-input placeholder="Contraseña" inputmode="password" required="true" type="email" id="passwordInput"></ion-input>
+            <ion-input placeholder="Contraseña" type="password" required="true" [(ngModel)]="user.password"></ion-input>
         </ion-card>
-        <ion-button expand="block" id="loginButton">Iniciar sesión</ion-button>
+        <div style="text-align: center; margin-top: 1em;">
+            <a class="">Olvidaste tu contraseña? Haz click para restablecerla </a>
+        </div>
+        <ion-button expand="block" id="loginButton" (click)="tryLogin()">Iniciar sesión</ion-button>
     </div>
 </ion-content>

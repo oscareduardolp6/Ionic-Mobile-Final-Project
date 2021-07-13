@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="full" class="ion-no-margin">
+        <ion-item>
+            <ion-label position="stacked" class="input-label">
+                Datos del Usuario 
+            </ion-label>
+            <ion-input placeholder="Usuario" required="true" type="email" id="userInput" [(ngModel)]="user_user"></ion-input>
+            <ion-input placeholder="Contraseña" type="password" required="true" [(ngModel)]="password1"></ion-input>
+            <ion-input placeholder="Contraseña" type="password" required="true" [(ngModel)]="password2"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked"class="input-label">Datos Personales</ion-label>
+            <ion-input placeholder="CURP" required="true" [(ngModel)]="person.curp"></ion-input>
+            <ion-input placeholder="Nombre(s)" required="true" [(ngModel)]="person.names"></ion-input>
+            <ion-input placeholder="Apellido Materno" required="true" [(ngModel)]="person.lastNameMother"></ion-input>
+            <ion-input placeholder="Apellido Paterno" required="true" [(ngModel)]="person.lastNameFather"></ion-input>
+            <ion-datetime placeholder="Fecha de nacimiento" cancelText="Cancelar" doneText="Listo" [(ngModel)]="person.borningDate"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label position="stacked" class="input-label" >Datos Escolares</ion-label>
+            <ion-item>
+                <ion-label>Grado</ion-label>
+                <ion-select [value]="groups[0].value" [(ngModel)]="group.grade">
+                    <ion-select-option *ngFor="let option of groups" [value]="option.value" >{{option.text}}</ion-select-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Grupo</ion-label>
+                <ion-select value="B" [(ngModel)]="group.group">
+                    <ion-select-option value="A">A</ion-select-option>
+                    <ion-select-option value="B">B</ion-select-option>
+                    <ion-select-option value="C">C</ion-select-option>
+                </ion-select>
+            </ion-item>
+        </ion-item>
+    </ion-list>
+    <ion-button color="primary" expand="block" class="submit-button" (click)="submitUser2()">Registrar</ion-button>
+</ion-content>
