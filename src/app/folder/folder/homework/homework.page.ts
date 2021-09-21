@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { homework } from "../../../model/User";
+import { HomeworksService } from "../../../homeworks.service";
 
 @Component({
   selector: 'app-homework',
@@ -7,37 +9,25 @@ import { Router } from '@angular/router';
   styleUrls: ['./homework.page.scss'],
 })
 export class HomeworkPage implements OnInit {
-    public homeworks: homework [] = [
-        {
-            text: "Unidad 4 del curso de Kotlin", 
-            isChecked: false
-        }, 
-        {
-            text: 'Proyecto Final de Sitemas Programables', 
-            isChecked: false
-        }, 
-        {
-            text: 'Topología de redes',
-            isChecked: false
-        }, 
-        {
-            text: "Proyecto de Java", 
-            isChecked: false
-        }
-    ]
+    public homeworks: homework [] = this.service.getHomeworks(); 
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private service: HomeworksService) { }
 
     ngOnInit() {
     }
+    
+    ionViewWillEnter(){
+        this.homeworks = this.service.getHomeworks() 
+
+    }
+
 
     addTarea(){
         this.router.navigate(['/homework-detail']);
     }
 
-}
+    home(){
+        this.router.navigate(['/folder']);
+    }
 
-interface homework{
-    text: string;
-    isChecked: boolean; 
 }

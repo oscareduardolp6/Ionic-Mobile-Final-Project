@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button (click)="home()"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agregar nota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-textarea placeholder="Detalles de la tarea" id="homeworkComment" [(ngModel)]="actualNote.text"></ion-textarea>
+    </ion-card>
+<div class="buttons-content">
+    <ion-button expand="block" class="input-detail mid" id="post-button" color="success" (click)="addGoodNote()">Buen comportamiento </ion-button>
+    <ion-button expand="block" class="input-detail mid" id="post-button" color="danger" (click)="addBadNote()">Mal comportamiento </ion-button>
+</div>
+</ion-content>

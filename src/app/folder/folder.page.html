@@ -31,7 +31,7 @@
             </ion-slides>
         </ion-card>
         <div id="icons">
-                <ion-card class="homeworkIcon" defaultHref="/folder/homework" >
+                <ion-card class="homeworkIcon" (click)="moveToHomeworks()">
                     <ion-card-header>
                         <ion-card-header>
                             <ion-card-subtitle>
@@ -43,7 +43,7 @@
                         </ion-card-content>
                     </ion-card-header>
                 </ion-card>
-            <ion-card class="homeworkIcon">
+            <ion-card class="homeworkIcon" (click)="goToNotes()">
                 <ion-card-header>
                     <ion-card-header>
                         <ion-card-subtitle>
@@ -62,7 +62,6 @@
                     <ion-card-subtitle>
                         Boleta
                     </ion-card-subtitle>
-
                 </ion-card-header>
             </ion-card>
 

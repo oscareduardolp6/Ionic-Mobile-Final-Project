@@ -1,25 +1,32 @@
 <ion-header>
   <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button (click)="home()"></ion-back-button>
+    </ion-buttons>
     <ion-title>Notas</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-    <ion-card class="note">
-        <div class="comment">
-            El niño ha estado platicando mucho en clase 
+    <ion-card class="note" *ngFor="let note of notes">
+        <div class="comment" >
+            {{note.text}}
         </div>
-        <div class="visual-comment">
-            ❌
+        <div class="visual-comment" >
+            {{note.good}}        
         </div>
     </ion-card>
-    <ion-card class="note">
+    <!-- <ion-card class="note">
         <div class="comment">
             Participó mucho en clase hoy
         </div>
         <div class="visual-comment">
             ✔️
         </div>
-    </ion-card>
+    </ion-card> -->
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="danger" (click)="addNote()">
+            <ion-icon name="add" ></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 
 </ion-content>

@@ -34,3 +34,23 @@ export interface Student{
     curp: string, 
     group: number
 }
+
+export interface homework {
+    text: string;
+    isChecked: boolean;
+}
+
+export interface completHomework {
+    title: string,
+    subject: string, 
+    group: Group, 
+    homework: homework
+}
+
+export interface note {
+    text: string,
+    good: icon 
+}
+
+export type icon = '✔️' | '❌'
+

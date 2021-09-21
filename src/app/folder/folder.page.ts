@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-folder',
@@ -16,7 +16,7 @@ export class FolderPage implements OnInit {
         'https://www.templateupdates.com/wp-content/uploads/2019/05/Horizontal-Conference-Flyer-Design-Template.jpg', 
         'https://previews.123rf.com/images/korara/korara1708/korara170800160/84999108-grand-opening-vector-illustration-template-banner-or-horizontal-poster-with-abstract-background-for-.jpg'
     ]
-  constructor(private activatedRoute: ActivatedRoute) { 
+  constructor(private activatedRoute: ActivatedRoute, private router:Router ) { 
         this.user = "Daniel"
   }
 
@@ -24,6 +24,10 @@ export class FolderPage implements OnInit {
     //this.folder = this.activatedRoute.snapshot.paramMap.get('id');
     this.folder = "Estudiante";
   }
+
+  moveToHomeworks = () => this.router.navigate(['/homework'])
+
+  goToNotes = () => this.router.navigate(['/notoes'])
 
 }
 

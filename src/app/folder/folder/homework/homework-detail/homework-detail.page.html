@@ -1,7 +1,12 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title>Agregar Tarea</ion-title>
-  </ion-toolbar>
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button (click)="home()"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Agregar Tarea</ion-title>
+    </ion-toolbar>
+</ion-header>
 </ion-header>
 
 <ion-content>
@@ -29,8 +34,9 @@
         </ion-select>
     </ion-card>
     <ion-card>
-        <ion-textarea placeholder="Detalles de la tarea" id="homeworkComment"></ion-textarea>
+        <ion-textarea placeholder="Detalles de la tarea" id="homeworkComment" [(ngModel)]="newhomework.text"></ion-textarea>
     </ion-card>
-    <ion-button expand="block" class="input-detail" id="post-button" >Publicar Tarea</ion-button>
+    <ion-button expand="block" class="input-detail" id="post-button" (click)="addHomework()">Publicar Tarea</ion-button>
+    <ion-button expand="block" color="danger" class="input-detail" id="cancel-button" (click)="addHomework()">Cancelar</ion-button>
     
 </ion-content>
